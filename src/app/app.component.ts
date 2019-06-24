@@ -6,4 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  titles: string[] = ['AppComponent', '2. Titel'];
 }

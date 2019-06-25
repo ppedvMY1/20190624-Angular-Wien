@@ -1,0 +1,8 @@
+<p>
+  grocery-list works!
+</p>
+<div *ngFor="let groceryList of groceryLists">
+  <div *ngFor="let cartItem of groceryList.shoppingCart">
+    {{cartItem.name}}
+  </div>
+</div>

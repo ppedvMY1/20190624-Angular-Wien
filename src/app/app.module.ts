@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { TimeComponent } from './time/time.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data-service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { InMemoryDataService } from './in-memory-data-service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService)
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

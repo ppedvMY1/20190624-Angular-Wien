@@ -1,12 +1,3 @@
-
-<div style="margin-left: 32px; margin-right: 32px;">
-    <p>
-        grocery-list works!
-      </p>
-  <mat-card *ngFor="let groceryList of groceryLists" style="width: 200px; height: 300px;">
-    <mat-card-title>
-      Einkaufslisten
-    </mat-card-title>
-  </mat-card>
-  <app-grocery-list-card-display *ngFor="let groceryList of groceryLists"></app-grocery-list-card-display>
+<div style="margin: 32px;display: flex; flex-direction: row;justify-content: space-evenly">
+  <app-grocery-list-card-display *ngFor="let groceryList of groceryLists" [groceryList]="groceryList"></app-grocery-list-card-display>
 </div>

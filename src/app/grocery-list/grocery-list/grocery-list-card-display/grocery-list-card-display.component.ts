@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { GroceryList } from '../../model/grocery-list';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { PurchaseItem } from '../../model/purchase-item';
 
 @Component({
   selector: 'app-grocery-list-card-display',
@@ -13,4 +15,8 @@ export class GroceryListCardDisplayComponent implements OnInit {
   ngOnInit() {
   }
 
+  drop(event: CdkDragDrop<PurchaseItem[]>) {
+    console.log("test");
+    moveItemInArray(this.groceryList.shoppingCart, event.previousIndex, event.currentIndex);
+  }
 }

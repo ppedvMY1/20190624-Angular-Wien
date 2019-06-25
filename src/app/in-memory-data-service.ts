@@ -17,7 +17,7 @@ export class InMemoryDataService implements InMemoryDbService {
                     id: '2',
                     name: 'Fahrrad',
                     count: 1,
-                    purchased: false,
+                    purchased: true,
                     maximumPrice: { value: 30000, symbol: 'EUR'}
                 }
             ],

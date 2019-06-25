@@ -2,14 +2,14 @@
   <mat-card-title>
     {{ groceryList.name }}
   </mat-card-title>
-  <mat-card-content>
-    <div *ngFor="let item of groceryList.shoppingCart">
-      <mat-card style="margin-bottom: 8px;background-color:wheat">
-        <mat-card-content>
-          <mat-checkbox style="margin-right: 12px;"></mat-checkbox>
-          {{item.name}} <b>{{item.count}}</b>
-        </mat-card-content>
-      </mat-card>
-    </div>
+  <mat-card-content cdkDropList (cdkDropListDropped)="drop($event)">
+      <div *ngFor="let item of groceryList.shoppingCart" cdkDrag>
+        <mat-card style="margin-bottom: 8px;background-color:wheat">
+          <mat-card-content>
+            <mat-checkbox [(checked)]="item.purchased" style="margin-right: 12px;"></mat-checkbox>
+            {{item.name}} <b>{{item.count}}</b>
+          </mat-card-content>
+        </mat-card>
+      </div>
   </mat-card-content>
 </mat-card>

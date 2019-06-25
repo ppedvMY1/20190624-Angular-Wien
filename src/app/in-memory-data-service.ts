@@ -5,6 +5,7 @@ export class InMemoryDataService implements InMemoryDbService {
     createDb() {
         let groceryLists: GroceryList[] = [
             {
+                name: 'Einkauf für Montag',
                 shoppingCart: [{
                     id: '1',
                     name: 'Apfel',
@@ -23,6 +24,7 @@ export class InMemoryDataService implements InMemoryDbService {
                 createdAt: '25-06-2019T11:00'
             },
             {
+                name: 'Einkaufen am Sonntag!!!',
                 shoppingCart: [{
                     id: '1',
                     name: 'Birne',

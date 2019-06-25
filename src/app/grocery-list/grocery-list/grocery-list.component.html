@@ -1,8 +1,12 @@
-<p>
-  grocery-list works!
-</p>
-<div *ngFor="let groceryList of groceryLists">
-  <div *ngFor="let cartItem of groceryList.shoppingCart">
-    {{cartItem.name}}
-  </div>
+
+<div style="margin-left: 32px; margin-right: 32px;">
+    <p>
+        grocery-list works!
+      </p>
+  <mat-card *ngFor="let groceryList of groceryLists" style="width: 200px; height: 300px;">
+    <mat-card-title>
+      Einkaufslisten
+    </mat-card-title>
+  </mat-card>
+  <app-grocery-list-card-display *ngFor="let groceryList of groceryLists"></app-grocery-list-card-display>
 </div>

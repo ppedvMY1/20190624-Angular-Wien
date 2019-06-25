@@ -9,6 +9,7 @@ import { TimeComponent } from './time/time.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data-service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DemoMaterialModule } from './material-module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    DemoMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

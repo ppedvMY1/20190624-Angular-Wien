@@ -8,6 +8,7 @@
           <mat-card-content>
             <mat-checkbox [(checked)]="item.purchased" style="margin-right: 12px;"></mat-checkbox>
             {{item.name}} <b>{{item.count}}</b>
+            {{item.maximumPrice.value | currency:item.maximumPrice.symbol:'symbol':'1.2-2':'de-DE'}}
           </mat-card-content>
         </mat-card>
       </div>

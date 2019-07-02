@@ -2,15 +2,22 @@
   <mat-card-title>
     {{ groceryList.name }}
   </mat-card-title>
-  <mat-card-content cdkDropList (cdkDropListDropped)="drop($event)">
+  <mat-card-content>
+    <span>
+    <span cdkDropList (cdkDropListDropped)="drop($event)"
+    id="{{groceryList.name}}"
+    [cdkDropListData]="groceryList.shoppingCart"
+    [cdkDropListConnectedTo]="connectedLists"
+    >
       <div *ngFor="let item of groceryList.shoppingCart" cdkDrag>
         <mat-card style="margin-bottom: 8px;background-color:wheat">
           <mat-card-content>
             <mat-checkbox [(checked)]="item.purchased" style="margin-right: 12px;"></mat-checkbox>
             {{item.name}} <b>{{item.count}}</b>
-            {{item.maximumPrice.value | currency:item.maximumPrice.symbol:'symbol':'1.2-2':'de-DE'}}
+            {{item.maximumPrice.value | currency:item.maximumPrice.symbol:'symbol':'1.2-2':'de'}}
           </mat-card-content>
         </mat-card>
       </div>
-  </mat-card-content>
+    </span></span>
+    </mat-card-content>
 </mat-card>

@@ -1,6 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { GroceryList } from '../../model/grocery-list';
-import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { PurchaseItem } from '../../model/purchase-item';
 
 @Component({
@@ -10,13 +10,19 @@ import { PurchaseItem } from '../../model/purchase-item';
 })
 export class GroceryListCardDisplayComponent implements OnInit {
   @Input() groceryList: GroceryList;
+  @Input() connectedLists: string[];
+  @Output() groceryListChange = new EventEmitter<GroceryList>();
+
   constructor() { }
 
   ngOnInit() {
   }
 
   drop(event: CdkDragDrop<PurchaseItem[]>) {
-    console.log("test");
-    moveItemInArray(this.groceryList.shoppingCart, event.previousIndex, event.currentIndex);
+    if (event.previousContainer === event.container) {
+      moveItemInArray(this.groceryList.shoppingCart, event.previousIndex, event.currentIndex);
+    } else {
+      transferArrayItem(event.previousContainer.data, event.container.data, event.previousIndex, event.currentIndex);
+    }
   }
 }

@@ -11,7 +11,7 @@ import { map, flatMap, mergeMap, tap } from 'rxjs/operators';
 })
 export class GroceryListComponent implements OnInit {
   groceryLists: GroceryList[];
-
+  connectedLists = [];
   constructor(
     public groceryListService: GroceryListService,
     public loggingService: LoggingService
@@ -31,6 +31,9 @@ export class GroceryListComponent implements OnInit {
       })
     ).subscribe(result => {
       this.groceryLists = result;
+      this.groceryLists.forEach(i => {
+        this.connectedLists.push(i.name);
+      });
     }, error => {
       this.loggingService.log('Error: Can\'t get grocery lists');
       this.loggingService.log(error);

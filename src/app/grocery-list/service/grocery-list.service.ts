@@ -23,7 +23,6 @@ export class GroceryListService {
     //  });
     // }
 
-
     return this.http.get<GroceryList[]>(url, {headers});
     // bei gleichem Namen ist diese Schreibweise nicht mehr notwendig
     // return this.http.get<GroceryList[]>(url, {headers: headers});
